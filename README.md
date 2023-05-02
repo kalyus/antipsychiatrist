@@ -1,6 +1,6 @@
 # antipsychiatrist
 
-Project for Programming Languages.
+Project for CSCI 3200 Programming Languages.
 
 Imagine this: 
 You walk into a doctors office. You aren't feeling so hot. So you tell the receptionist all of your issues. The receptionist writes down everything.
