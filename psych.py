@@ -52,6 +52,7 @@ negativeverb: depressiont
 
 depressiont: "sad" 
     | "gloomy"
+    | "bummed"
       | "unhappy" 
       | "miserable"
       | "down" 
@@ -85,6 +86,7 @@ depressiont: "sad"
       | "depressed"
       | "pessimism" 
       | negatedepression
+      | "sick"
 
 negatedepression: "not" depressiona
 
@@ -244,7 +246,7 @@ def diagnose(text):
     try:
 
         parser = Lark(grammar)
-        
+
         tree = parser.parse(text)
         #print(str(tree))
         #key_phrases = find_key_phrases(tree)
@@ -314,4 +316,4 @@ def find_keys(tree):
         
 text = input("How is the patient feeling? \n")
 
-print(diagnose(text)) 
+print(diagnose(text))
