@@ -13,7 +13,7 @@ The grammar will always start with "The patient feels..." Followed by the compla
 
 I diagnose you with: depression (The output)
 
-**You can make go to the doctor with as many disorders as you want (or need)**
+**You can go to the doctor with as many disorders as you want (or need)**
 
 *The patient feels sad and angry and not competent and pain that is chronic and afraid of people and paranoid since last monday and hopeless and resentment that is deep rooted*
 
