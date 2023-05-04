@@ -69,8 +69,25 @@ I diagnose you with: anxiety
 
 I diagnose you with the following: phobia and ocd
 
+**8. You can string them along**
 
+*The patient feels sad and depressed and bad and guilt and shame and lonely and bored and alienation and rejected and dread and grief and lonely and hurt*
 
+I diagnose you with: depression
+
+**9. If you do not input a known feeling or misspell something, the program will let you know**
+
+*The patient feels* 
+
+Invalid input, we only want doctor speak here. 
+Or maybe you just misspelled something which in that case I diagnose you with Dysgraphia
+
+**10. Lastly, you can combine everything we did before**
+
+*The patient feels down and hopeless and The patient feels addicted to soap and The patient feels paranoid and afraid of algorithms and The patient feels alone since last wednesday and feels rejected and The patient feels not happy and not competent and not wanted and The patient feels panic that is paralyzing and The patient feels addicted to computers and afraid of technology and The patient feels sad and depressed and bad and guilt and shame and lonely and bored and alienation and 
+rejected and dread and grief and lonely and hurt*
+
+I diagnose you with the following: schizophrenia, phobia, anxiety, ocd and depression
 
 
 
