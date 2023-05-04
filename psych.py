@@ -1,88 +1,237 @@
 from lark import Lark, exceptions
 
 grammar = """
-start: complaint+             
+start: "The patient feels" condition complaint*            
 
-// Allow optional punctuation after each word
 complaint: "The patient feels" condition
-  | "The patient feels" condition "and" complaint
-  | condition complaint
-  | condition
-  | "the patient feels" condition "and" complaint
-  | "the patient feels" condition
+ | "The patient feels" condition "and" complaint
+ | condition complaint
+ | "and" condition
+ | "and" complaint
+ | "and feels" condition
+ | "the patient feels" condition "and" complaint
+ | "the patient feels" condition
 
 
+//complaintconnector: "and" condition | "and complaint"
+//| "and feels" condition
 
 
-condition: negative | negatepositive | negative "and" condition
+condition: negative | negative "and" condition
 
 
+subjectiveclause: "painful" 
+        | "horrible"
+       | "chronic" 
+       | "paralyzing"
+       | "lingering" 
+       | "constant"
+       | "continuous" 
+       | "deep" 
+       | "deep rooted"
+       | "recurrsing" 
+       | "sustained"
+       | "lifelong" 
+       | "habitual" 
+       | "incurable"
 
-subjectiveclause: "painful" | "horrible" //Add List of words
 
 negative: negativeverb
 | negativeverb "since" time
 | negativeverb "that is" subjectiveclause
 
 
-
-negativeverb: depressiont | anxietyt| adhdt | angert | ocdt | schizophreniat //Add More
-
-
-depressiont: "sad" | "gloomy" | "unhappy" | "miserable"
-       | "down" | "discouraged" | "bad" | "guilt" | "shame"
-       | "lonely" | "guilty" | "bored" | "agony" | "alienation"
-       | "anguish" | "apathy" | "aversion" | "apprehension"
-       | "demoralized" | "terrible" | "horrible" | "numb"
-       | "hopeless" | "alone" | "disheartened" | "remorse"
-       | "rejected" | "revulsion" | "dread" | "grief"
-       | "hurt" | "depressed" | "pessimism"
+negativeverb: depressiont
+| anxietyt
+| adhdt
+| angert
+| ocdt
+| schizophreniat //Add More
+| phobiat
 
 
-anxietyt: "worried" | "uneasy" |"pertubed" | "troubled"
-       | "concerned" | "shocked" | "shock" | "panic"
-       | "distressed" | "nervous" | "despair"
-       |"disturbed" | "overwhelmed" | "reluctant"
-       |"anxious" | "afraid" | "fearful" | "scared"
-       | "suspicious" | "hysteric" | "envy"
+depressiont: "sad" 
+    | "gloomy"
+      | "unhappy" 
+      | "miserable"
+      | "down" 
+      | "discouraged" 
+      | "bad"
+      | "guilt" 
+      | "shame"
+      | "lonely" 
+      | "guilty" 
+      | "bored"
+      | "agony" 
+      | "alienation"
+      | "anguish" 
+      | "apathy"
+      | "aversion" 
+      | "apprehension"
+      | "demoralized" 
+      | "terrible"
+      | "horrible" 
+      | "numb"
+      | "hopeless" 
+      | "alone"
+      | "disheartened" 
+      | "remorse"
+      | "rejected" 
+      | "revulsion"
+      | "dread" 
+      | "grief" 
+      | "pain"
+      | "hurt" 
+      | "depressed"
+      | "pessimism" 
+      | negatedepression
+
+negatedepression: "not" depressiona
+
+depressiona: "happy" 
+        | "fulfilled" 
+        | "glad" 
+        | "content" 
+        | "cheery"
+       | "fortunate" 
+       | "joyful" | "helpful" 
+       | "favorable" 
+       | "favored"
+       | "deserving" 
+       | "wanted" 
+       | "loved" 
+       | "interested" 
+       | "excited"
+       | "good"
 
 
-adhdt: "restless" | "unfocused" | "aloof" | "inattentive" | "impulsive"
-       | "dumb" | "hyper" | "hyperactive" | "jumpy"
+anxietyt: "worried" 
+    | "uneasy"
+      |"pertubed" 
+      | "troubled"
+      | "concerned" 
+      | "shocked"
+      | "shock" 
+      | "panic"
+      | "distressed" 
+      | "nervous" 
+      | "despair"
+      |"disturbed" 
+      | "overwhelmed" 
+      | "reluctant"
+      |"anxious" 
+      | "afraid" 
+      | "fearful" 
+      | "scared"
+      | "suspicious" 
+      | "hysteric" 
+      | "envy"
+      | "helpless" 
+      | "wrong"
+      | negateanxiety
 
 
-angert: "angry" | "enraged" | "furious" | "ire" | "resentment"
-       | "hatred" | "annoyed" | "displeasure" | "bipolar"
-       | "outraged" | "indignation" | "antagonizing"
-       | "agitated" | "aggressive" | "spite" | "smug" | "stubborn"
-       | "hate" | "jealous" | "jealousy" | "insulted" | "irritated"
-       | "loathing" | "mad" | "moody"
+negateanxiety: "not" anxietya
 
 
-ocdt: dependent | "compulsive"
+anxietya: "calm" 
+    | "collected" 
+    | "competent"
+       | "bold" 
+       | "brave" 
+       | "capable"
+       | "courageous" 
+       | "unafraid"
+       | "assured" 
+       | "assertive" 
+       | "smart" 
+       | "intelligent"
+       | "adequate" 
+       | "efficient" 
+       | "qualified" 
+       | "skilled"
+       | "adaptable" 
+       | "proficient" 
+       | "succesful"
 
-schizophreniat: "watched" | "paranoid" | "hallucinating" | "stalked" 
+
+adhdt: "restless" 
+| "unfocused" 
+| "aloof" | "inattentive" 
+| "impulsive"
+      | "dumb" 
+      | "hyper" 
+      | "hyperactive" 
+      | "jumpy"
 
 
-negatepositive: "not" positiveverb  //Redundant, but optional
-depressionnegate: negatepositive
-positiveverb: "happy" | "excited" | "good" | "smart" //Add more
 
+angert: "angry" 
+| "enraged" 
+| "furious"
+      | "ire" 
+      | "resentment"
+      | "hatred" 
+      | "annoyed"
+      | "displeasure" 
+      | "bipolar"
+      | "outraged" 
+      | "indignation" 
+      | "antagonizing"
+      | "agitated" 
+      | "aggressive"
+      | "spite" 
+      | "smug" 
+      | "stubborn"
+      | "hate" 
+      | "jealous" 
+      | "jealousy"
+      | "insulted" 
+      | "irritated"
+      | "loathing" 
+      | "mad" 
+      | "moody"
+      | "pity" 
+      | "possessive"
+
+
+ocdt: dependent | "compulsive" | "obsessive" | "fixated"
+
+
+schizophreniat: "watched" 
+| "paranoid" 
+| "hallucinating" 
+| "stalked"
+       |"hallucinating" 
+       | "harassed" 
+       | "harnessed"
+
+
+
+//negatepositive: "not" positiveverb  //Redundant, but optional
+//depressionnegate: negatepositive
+//positiveverb: "happy" | "excited" | "good" | "smart" //Add more
 
 dependent: "addicted to" noun | "obsessed with" noun
 
 
-//Add FEARS/PHOBIAS
+phobiat: "afraid of" noun | "phobic" | "scared of" noun
+| "fearful of" noun | "avoidant of" noun
 
-noun: "words" | "soap"
+
+noun: /[^\s]+/ | "melons"
 
 
 time: "yesterday" | "last" weekday
 weekday: "monday" | "tuesday" | "wednesday" | "thursday" | "friday" |"saturday" | "sunday"
 
 
+
+
+%import common.WORD
 %import common.WS
 %ignore WS
+
 """
 
 #parser = Lark(grammar)
@@ -91,14 +240,18 @@ weekday: "monday" | "tuesday" | "wednesday" | "thursday" | "friday" |"saturday" 
 
 #parse_tree = parser.parse(program)
 def diagnose(text):
+
     try:
+
         parser = Lark(grammar)
+        
         tree = parser.parse(text)
         #print(str(tree))
         #key_phrases = find_key_phrases(tree)
         #print("Key phrases:", key_phrases)
 
         #for child in tree.children:
+        #    print("---")
         #    print(child)
 
         if "condition" in str(tree):
@@ -112,51 +265,53 @@ def diagnose(text):
             #return f"I diagnose you with the following: {' '.join(set(key_findings))}"
 
             diagnoses = set(key_findings)
+
             if len(diagnoses) == 1:
+
                 return f"I diagnose you with: {', '.join(diagnoses)}"
+            
             elif len(diagnoses) > 1:
+
                 diagnoses_list = list(diagnoses)
+
                 diagnoses_str = ", ".join(diagnoses_list[:-1])
+
                 return f"I diagnose you with the following: {diagnoses_str} and {diagnoses_list[-1]}"
+            
         else:
+
             return "You have some unknown conditions."
+        
     except exceptions.LarkError:
+
         return "Invalid input, we only want doctor speak here. \nOr maybe you just misspelled something which in that case I diagnose you with Dysgraphia"
 
 
-#Recursive approach
+
 def find_keys(tree):
-    diags = ["depressiont", "anxietyt", "angert", "adhdt", "schizophreniat", "ocdt"]
+
+    diags = ["depressiont", "anxietyt", "angert", "adhdt", "schizophreniat", "ocdt", "phobiat"]
+
     conditions = []
 
-    if len(tree.children) > 0:
+    try:
+
         for child in tree.children:
+
             conditions += find_keys(child)
 
+    except AttributeError:
+
+        pass
+
     for d in diags:
+
         if d in str(tree):
+
             conditions.append(d[:-1])
 
     return conditions
-
-#Iterative approach
-'''   
-def find_keys(tree):
-    diags = ["depressiont", "anxietyt", "angert", "adhdt", "schizophreniat", "ocdt"]
-    conditions = []
-
-    for child in tree.children:
-        for d in diags:
-            child_list = str(child)
-            if d in child_list:
-                conditions.append(d[:-1])
-
-        #conditions += find_keys(child)
-
-    return conditions
-'''
-
         
-text2 = input("How is the patient feeling? \n")
+text = input("How is the patient feeling? \n")
 
-print(diagnose(text2)) # Output: You have depression.
+print(diagnose(text)) 
