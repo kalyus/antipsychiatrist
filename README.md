@@ -91,7 +91,7 @@ I diagnose you with the following: schizophrenia, phobia, anxiety, ocd and depre
 
 
 <details>
-<summary><h1>Robo Doctor Psychiatrist</h1></summary>
+<summary><h1>Story time</h1></summary>
 
 # Deep explanation:
 
