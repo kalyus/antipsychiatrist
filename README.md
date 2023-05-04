@@ -2,6 +2,80 @@
 
 Project for CSCI 3200 Programming Languages.
 
+# Quick explanation:
+This project will assume that a patient is walking into a psychiatrists office with some complaints about how they feel about themselves. The patient lays out all of their issues, but in the future, there is no longer a need for a trained psychiatrist to be on the scene to diagnose you. Now you can just relay that information to the computer instead!
+
+The grammar will always start with "The patient feels..." Followed by the complaint or as many complaints as they need. As long as what they feel is stored in the database, the computer can give a quick diagnoses of their conditions.
+
+**Example:**
+
+*The patient feels sad (The input)*
+
+I diagnose you with: depression (The output)
+
+**You can make go to the doctor with as many disorders as you want (or need)**
+
+*The patient feels sad and angry and not competent and pain that is chronic and afraid of people and paranoid since last monday and hopeless and resentment that is deep rooted*
+
+I diagnose you with the following: anxiety, phobia, depression, schizophrenia and anger
+
+**Running**
+
+This should run in a singular python file. As long as you compile it, it should run.
+
+Once you run the program, it will prompt for a user input. This is where you will begin to enter how the patient feels.
+
+**More sample program examples of inputs and outputs**
+
+**1. Here we have a depression patient**
+
+*The patient feels down and hopeless*
+
+I diagnose you with: depression
+
+**2. Here we have a patient addicted to soap (Since the visit, he is now clean)**
+
+*The patient feels addicted to soap*
+
+I diagnose you with: ocd
+
+**3. Here we have the patient who is afraid of algorithms**
+
+*The patient feels paranoid and afraid of algorithms* 
+
+I diagnose you with the following: schizophrenia and phobia
+
+**4. You can also specify some things about your condition.**
+
+*The patient feels alone since last wednesday and feels rejected*
+
+I diagnose you with: depression
+
+**5. You can also say how they are not feeling good**
+
+*The patient feels not happy and not competent and not wanted*
+
+I diagnose you with the following: anxiety and depression
+
+**6. You can also talk about how each feeling is in detail.**
+
+*The patient feels panic that is paralyzing*
+
+I diagnose you with: anxiety
+
+**7. You may also have them be afraid or addicted to almost anything**
+
+*The patient feels addicted to computers and afraid of technology*
+
+I diagnose you with the following: phobia and ocd
+
+
+
+
+
+
+# Deep explanation:
+
 Imagine this: 
 You walk into a doctors office. You aren't feeling so hot. So you tell the receptionist all of your issues. The receptionist writes down everything.
 Does she go to the doctor? Yes and no. The doctor is out today. Dr. Psychiatrist no longer works 24/7. But you know who does? Robo-Doctor-Psychatrist. 
