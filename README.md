@@ -90,6 +90,8 @@ rejected and dread and grief and lonely and hurt*
 I diagnose you with the following: schizophrenia, phobia, anxiety, ocd and depression
 
 
+<details>
+<summary><h1>Robo Doctor Psychiatrist</h1></summary>
 
 # Deep explanation:
 
@@ -109,4 +111,6 @@ As you leave the office, you can't help but feel more lost and alone than ever b
 But deep down, you know that there's still hope. Despite the prevalence of machines like the Robo-Doctor-Psychiatrist, there are still compassionate and caring professionals out there who are dedicated to helping others. It may take some searching and some effort to find them, but they exist. And with their help, you can begin to heal and find your way back to a life full of meaning and purpose. As you walk out into the sunshine, you take a deep breath and resolve to keep searching for the kind of care and support that you need. You may have to face the cold and unfeeling world of technology and machines, but you know that there's still a human heart beating inside you, waiting to be nurtured and cared for as you think: "I am the antipsychiatrist in charge of human connection".
 
 When I stepped out into the bright sunlight, from the darkness of the psychiatrist office, I had only two things on my mind: Paul Newman and a ride home
+  
+ </details>
 
