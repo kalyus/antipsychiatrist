@@ -1,5 +1,6 @@
 
 * Italics = Input
+* 
 *The patient feels down and hopeless*
 
 I diagnose you with: depression
