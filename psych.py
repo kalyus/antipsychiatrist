@@ -236,6 +236,10 @@ weekday: "monday" | "tuesday" | "wednesday" | "thursday" | "friday" |"saturday" 
 
 """
 
+
+
+
+
 #parser = Lark(grammar)
 
 #program = "The patient feels sad"
@@ -256,23 +260,22 @@ def diagnose(text):
         #    print("---")
         #    print(child)
 
-        if "condition" in str(tree):
+        if "condition" in str(tree): #First lets check that it is a valid parse. If not then don't bother checking everything else
             #parseWords = text.split()
             #if "sad" in parseWords:
             #    return "You have depression"
 
-            key_findings = find_keys(tree)
+            key_findings = find_keys(tree) #I have the key diagnoses mapped to the word lists associated with it
 
 
-            #return f"I diagnose you with the following: {' '.join(set(key_findings))}"
 
-            diagnoses = set(key_findings)
+            diagnoses = set(key_findings) #If there are multiple inputs that are associated with a diagnoses, just get rid of them.
 
-            if len(diagnoses) == 1:
+            if len(diagnoses) == 1: #We just return one
 
                 return f"I diagnose you with: {', '.join(diagnoses)}"
             
-            elif len(diagnoses) > 1:
+            elif len(diagnoses) > 1: #We want to have the second to last diagnoses have and in front of it.
 
                 diagnoses_list = list(diagnoses)
 
@@ -280,9 +283,6 @@ def diagnose(text):
 
                 return f"I diagnose you with the following: {diagnoses_str} and {diagnoses_list[-1]}"
             
-        else:
-
-            return "You have some unknown conditions."
         
     except exceptions.LarkError:
 
@@ -300,9 +300,9 @@ def find_keys(tree):
 
         for child in tree.children:
 
-            conditions += find_keys(child)
+            conditions += find_keys(child) #Go through the children of the tree and eventually add them to the condition list
 
-    except AttributeError:
+    except AttributeError: #It occasionally has attribute errors so we can ignore as we just search for key phrases which are mapped to diagnoses
 
         pass
 
@@ -310,10 +310,10 @@ def find_keys(tree):
 
         if d in str(tree):
 
-            conditions.append(d[:-1])
+            conditions.append(d[:-1]) #remove the ending tag from the grammar
 
-    return conditions
+    return conditions #returns the list
         
 text = input("How is the patient feeling? \n")
 
-print(diagnose(text))
+print(diagnose(text)) 
