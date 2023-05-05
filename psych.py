@@ -221,7 +221,7 @@ phobiat: "afraid of" noun | "phobic" | "scared of" noun
 | "fearful of" noun | "avoidant of" noun
 
 
-noun: /[^\s]+/ | "melons"
+noun: WORD | "melons"
 
 
 time: "yesterday" | "last" weekday
