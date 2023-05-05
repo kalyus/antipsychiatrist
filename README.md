@@ -5,7 +5,7 @@ Project for CSCI 3200 Programming Languages.
 # Quick explanation:
 This project will assume that a patient is walking into a psychiatrists office with some complaints about how they feel about themselves. The patient lays out all of their issues, but in the future, there is no longer a need for a trained psychiatrist to be on the scene to diagnose you. Now you can just relay that information to the computer instead!
 
-The grammar will always start with "The patient feels..." Followed by the complaint or as many complaints as they need. As long as what they feel is stored in the database, the computer can give a quick diagnoses of their conditions.
+The grammar will always start with "The patient feels..." Followed by the complaint or as many complaints as they need. As long as what they feel is stored in the database, the computer can give a quick diagnoses of their conditions. It is similar to a hashmap where I have the different keys which are diagnoses, mapped to the associated feelings or values.
 
 **Example:**
 
